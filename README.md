@@ -2,7 +2,7 @@
 
 ### Microcontroller Used: RaspberryPi-Pico : RP2040
 
-<img src="https://in.element14.com/productimages/large/en_GB/3643332-40.jpg" width=30%>
+<img src="https://images.ctfassets.net/2lpsze4g694w/4jQGyUQTjMglSA7GjGvGPa/10949b5cd522330327e7d9917589c1f9/PICO_BOARD_TOP_WHITE.jpg?w=800" width=50%>
 
 ## Peripheral Connections
 
