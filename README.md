@@ -1,8 +1,8 @@
-# Automatic Watering System
+# Raspberry Pi Pico Plant Irrigator
 
+### Microcontroller Used: RaspberryPi-Pico : RP2040
 
-
-
+<img src="https://in.element14.com/productimages/large/en_GB/3643332-40.jpg" style="zoom:20%;" />
 
 ## Peripheral Connections
 
