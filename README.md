@@ -1,6 +1,6 @@
 # Raspberry Pi Pico Plant Irrigator
 
-### Microcontroller Used: RaspberryPi-Pico : RP2040
+### Microcontroller Used: [RaspberryPi-Pico : RP2040](https://www.raspberrypi.com/products/raspberry-pi-pico/)
 
 <p style="align:centre">
     <img src="https://images.ctfassets.net/2lpsze4g694w/4jQGyUQTjMglSA7GjGvGPa/10949b5cd522330327e7d9917589c1f9/PICO_BOARD_TOP_WHITE.jpg?w=800" width=50%>
@@ -8,10 +8,18 @@
 
 
 
+## Read Project Article for Details
+
+Read [here](https://yatharthb97.github.io/projects/auto_irrigation/).
+
+Some basic information is given below.
+
+
+
 ## Peripheral Connections
 
 ```mermaid
-flowchart RL;
+flowchart LR;
 	
 	subgraph "Relay Ch1";
 		Pump -.- Mains(("~<br>Mains"))
@@ -27,6 +35,7 @@ flowchart RL;
 			direction LR
 			SP(Start Pump) --> Pump
 			SB("StartBuzzer") --> Buzzer
+			%%SP ---> SB
 		end
 		Pico-MCU["Pico-MCU"] -."connects to".- Relay
 		style Pico-MCU fill:#6acf65,stroke:#333,stroke-width:4px, stroke-dasharray: 5 5
@@ -43,6 +52,8 @@ flowchart RL;
 
 
 
+
+
 ## Decision Flowchart
 
 ```mermaid
@@ -56,5 +67,33 @@ flowchart LR
 		S13 -. return .-> check_time
 		S15 -. return .-> check_time
 	end
+```
+
+## Operations
+
+#### Running Pump Equivalent
+
+```mermaid
+flowchart LR;
+	RP("Run Pump") --> SP("Start Pump")
+	RP --> SB("Start Buzzer")
+	SB -.- X["Sound Continuously"]
+```
+
+#### Manual Operations
+
+```mermaid
+flowchart LR;
+	TS{"Touch<br>Switch"} --true-->RP("Run Pump")
+	TS--false-->X(())
+```
+
+#### Alarm: alert the user for starting manual pump operation
+
+```mermaid
+flowchart LR;
+	RTC[("DS1302<br>RTC")] --current time --> Q{"curent time<br>==<br>alarm time"}
+	Q --true--> RB("Run Buzzer<br>(1 min)")
+	RB-.-Sound[Beeping Sound]
 ```
 
