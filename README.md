@@ -85,7 +85,7 @@ flowchart LR;
 ```mermaid
 flowchart LR;
 	TS{"Touch<br>Switch"} --true-->RP("Run Pump")
-	TS--false-->X(())
+	TS--false-->X(("X"))
 ```
 
 #### Alarm: alert the user for starting manual pump operation
