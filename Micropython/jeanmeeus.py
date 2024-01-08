@@ -1,5 +1,6 @@
 # Source https://stackoverflow.com/a/30169668/11733629
 
+
 def is_leap_year(year):
     """ if year is a leap year return True
         else return False """
@@ -17,7 +18,7 @@ def yearday(D, M, Y):
     N = int((275 * M) / 9.0) - K * int((M + 9) / 12.0) + D - 30
     return N
 
-def ymd(Y,N):
+def ymd(Y, N):
     """ given year = Y and day of year = N, return year, month, day
         Astronomical Algorithms, Jean Meeus, 2d ed, 1998, chap 7 """    
     if is_leap_year(Y):

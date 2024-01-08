@@ -18,6 +18,9 @@ class DS1302:
         self.cs = cs
         self.clk.init(Pin.OUT)
         self.cs.init(Pin.OUT)
+        
+        # Declare alias
+        self.datetime = self.date_time
 
     def _dec2hex(self, dat):
         return (dat//10) * 16 + (dat % 10)

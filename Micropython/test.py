@@ -1,10 +1,9 @@
-import utime
-import time
+from machine import Pin
+from time import sleep
 
-start_t = time.ticks_ms()
-lst =[]
-while time.ticks_diff(time.ticks_ms(), start_t) < 4000:
-    utime.sleep(1)
-    lst.append(time.ticks_ms())
-    #print("Hello")
-print(lst)
+sw1 = Pin(15, Pin.IN)
+sw2 = Pin(16, Pin.IN)
+
+while True:
+    print(sw1.value(), sw2.value())
+    sleep(0.2)
